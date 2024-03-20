@@ -10,7 +10,7 @@ const Teacher = ({ showEditModal, selectedCard }: any): JSX.Element => {
   return (
     <div className="">
       <Container.Form
-        className="w-[360px]"
+        className="w-[100%]"
         url={`/teachers/${get(selectedCard, "_id")}`}
         method="put"
         configs={{
@@ -53,14 +53,14 @@ const Teacher = ({ showEditModal, selectedCard }: any): JSX.Element => {
             <Spin spinning={isSubmitting} tip="Verifying">
               <Field
                 component={Fields.Input}
-                className="mb-5"
+                className="mb-3 w-full"
                 name="name"
                 type="text"
                 placeholder="Teacher name"
                 size="large"
               />
               <Field
-                className="mb-5"
+                className="mb-3 w-full"
                 component={Fields.Input}
                 name="subject"
                 type="text"
@@ -68,7 +68,7 @@ const Teacher = ({ showEditModal, selectedCard }: any): JSX.Element => {
                 size="large"
               />
               <Field
-                className="mb-5"
+                className="mb-3 w-full"
                 component={Fields.Input}
                 name="description"
                 type="text"
@@ -82,7 +82,7 @@ const Teacher = ({ showEditModal, selectedCard }: any): JSX.Element => {
                 name="image"
               />
               <Button
-                className="w-full h-auto py-[10px] px-4 bg-[#2196F3] text-white font-bold hover:!text-white"
+                className="w-full border-0 h-auto py-[10px] px-4 bg-[#2196F3] text-white font-bold hover:!text-white"
                 htmlType="submit"
               >
                 Saqlash

@@ -41,7 +41,7 @@ const Program = ({
           return (
             <Spin spinning={isSubmitting} tip="Verifying">
               <Field
-                rootClassName="mb-[40px] w-[450px]"
+                rootClassName="mb-[10px] w-[450px]"
                 component={Fields.Input}
                 name="title"
                 type="text"
@@ -49,7 +49,7 @@ const Program = ({
                 size="large"
               />
               <Field
-                rootClassName="mb-[40px] w-[450px]"
+                rootClassName="mb-[10px] w-[450px]"
                 component={Fields.Input}
                 name="description"
                 type="text"

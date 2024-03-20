@@ -101,6 +101,7 @@ const Vacancy = () => {
                 />
                 <Row
                   justify="space-between"
+                  align="stretch"
                   className="h-[75vh] overflow-y-auto mt-[15px]"
                 >
                   {items.map((card) => {
@@ -110,7 +111,7 @@ const Vacancy = () => {
                           <Card
                             hoverable
                             style={{ width: 260, marginRight: 15 }}
-                            className="pb-8"
+                            className="pb-8 bg-[#f2f2f2] h-[100%] border-[#f2f2f2] dark:bg-[#30354E] dark:border-[#30354E]"
                           // cover={
                           //   <img alt="" src={get(card, "image[0].medium")} />
                           // }
@@ -118,16 +119,17 @@ const Vacancy = () => {
                             <Meta
                               className="pb-[40px]"
                               title={
-                                <div className="flex justify-between items-center mb-3">
-                                  <p>{(get(card, "title", ""))}</p>
-
+                                <div className="flex justify-between items-center mb-1">
+                                  <p className="dark:text-[#c4c5c8] text-lg">{(get(card, "title", ""))}</p>
                                 </div>
                               }
                               description={
-                                <div className="flex justify-between items-center mb-3">
-                                  <p>{(get(card, "description", ""))}</p>
-                                  <p>{(get(card, "week", ""))}</p>
-                                  <p>{(get(card, "clock", ""))}</p>
+                                <div>
+                                  <p className="dark:text-[#e5e7eb] text-base mb-1">{(get(card, "description", ""))}</p>
+                                  <p className="text-[#558dfe]">Ish Kunlari:</p>
+                                  <p className="dark:text-[#e5e7eb]">{(get(card, "week", ""))}</p>
+                                  <p className="text-[#558dfe]">Ish Vaqti:</p>
+                                  <p className="dark:text-[#e5e7eb]">{(get(card, "clock", ""))}</p>
                                 </div>
                               }
                             />

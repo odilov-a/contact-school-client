@@ -145,7 +145,7 @@ const Navigation: React.FC = () => {
                   className="left-sidebar text-[#9EA3B5] text-[17px]"
                 >
                   {childItem.route ? (
-                    <Link to={childItem.route}>{childItem.label}</Link>
+                    <Link className="capitalize" to={childItem.route}>{childItem.label}</Link>
                   ) : (
                     <>{childItem.route}</>
                   )}
@@ -159,7 +159,7 @@ const Navigation: React.FC = () => {
               icon={menuItem.icon}
             >
               {menuItem.route ? (
-                <Link to={menuItem.route}>{menuItem.label}</Link>
+                <Link className="capitalize" to={menuItem.route}>{menuItem.label}</Link>
               ) : (
                 <>{menuItem.route}</>
               )}
@@ -170,8 +170,8 @@ const Navigation: React.FC = () => {
       {/* </div> */}
       <div>
         <div className="absolute bottom-[36px] left-[20%]">
-          <div className="flex justify-center mb-[60px]">
-            <div className="profile-panel mt-[100px] transition-all ease-in-out duration-300">
+          <div className="flex justify-center bottom-[120px] h-[80px]">
+            <div className="profile-panel transition-all ease-in-out duration-300">
               {/* <img
                 className="sider-avatar cursor-pointer w-[105px] relative z-1 h-[95px] rounded-[12px]"
                 src={Avatar}

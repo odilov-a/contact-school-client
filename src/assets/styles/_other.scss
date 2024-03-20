@@ -345,3 +345,39 @@ body.dark {
   background-size: 500px 450px;
   background-position: right bottom;
 }
+
+.ant-modal-confirm-title {
+  color: #9EA3B5 !important;
+}
+
+.ant-modal-confirm-btns {
+  .ant-btn-default {
+    color: #9EA3B5 !important;
+  }
+  
+  .ant-btn-dangerous {
+    color: #9EA3B5 !important;
+  }
+}
+
+.btnPanel2 {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  display: flex;
+
+  .editBtn {
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 6px 7px 8px 9px;
+    background-color: #9ea3b5;
+    margin-right: 10px;
+  }
+
+  .deleteBtn {
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 7px 10px 9px 9px;
+    background-color: #ffa39e;
+  }
+}

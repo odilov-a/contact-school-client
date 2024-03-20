@@ -50,18 +50,20 @@ const TelegramCourses = () => {
                   {items.map((card) => {
                     return (
                       <>
-                        <Col className="gutter-row mb-5" span={6}>
-                          <Card>
+                        <Col className="gutter-row mb-5" span={24}>
+                          <Card
+                            className="bg-[#f2f2f2] border-[#f2f2f2] dark:bg-[#30354E] dark:border-[#30354E]"
+                          >
                             <Meta
                               className="pb-[40px]"
                               title={
                                 <div className="mb-3">
-                                  <p>telegramBotToken: {(get(card, "telegramBotToken", "none"))}</p>
+                                  <p className="dark:text-[#e5e7eb]">telegramBotToken: {(get(card, "telegramBotToken", "none"))}</p>
                                 </div>
                               }
                               description={
                                 <div className="mb-3">
-                                  <p>telegramChannelChatId: {(get(card, "telegramChannelChatId", "none"))}</p>
+                                  <p className="dark:text-[#e5e7eb]">telegramChannelChatId: {(get(card, "telegramChannelChatId", "none"))}</p>
                                 </div>
                               }
                             />

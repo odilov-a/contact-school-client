@@ -100,22 +100,16 @@ const Gallery = () => {
                   onClick={() => showCreateModal(true)}
                 />
                 <Row
-                  justify="space-between"
-                  className="h-[75vh] overflow-y-auto mt-[15px]"
+                  // justify=""
+                  className="h-[120px] mt-[15px]"
                 >
                   {items.map((card) => {
                     return (
                       <>
-                        <Col className="gutter-row mb-5" span={6}>
-                          <Card
-                            hoverable
-                            style={{ width: 260, marginRight: 15 }}
-                            className="pb-8"
-                            cover={
-                              <img alt="" src={get(card, "image[0].medium")} />
-                            }
-                          >
-                            <div className="btnPanel">
+                        <Col className="flex items-baseline justify-center">
+                          <div className="mr-8 mb-4">
+                          <img className="object-cover rounded-[10px] w-[260px] h-[200px]" alt="" src={get(card, "image[0].medium")} />
+                          <div className="btnPanel2">
                               <div
                                 className="editBtn"
                                 onClick={() => onEdit(card)}
@@ -131,7 +125,8 @@ const Gallery = () => {
                                 <Delete />
                               </div>
                             </div>
-                          </Card>
+                          </div>
+                          
                         </Col>
                       </>
                     );

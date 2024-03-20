@@ -32,6 +32,7 @@ const Blog = () => {
       okText: t("да"),
       okType: "danger",
       cancelText: t("нет"),
+      className: "dark:text-white ",
       onOk: () => deleteAction(id),
     });
   };
@@ -101,7 +102,7 @@ const Blog = () => {
                 />
                 <Row
                   justify="space-between"
-                  className="h-[75vh] overflow-y-auto mt-[15px]"
+                  className="h-[75vh] mt-[15px] items-stretch"
                 >
                   {items.map((card) => {
                     return (
@@ -110,23 +111,26 @@ const Blog = () => {
                           <Card
                             hoverable
                             style={{ width: 260, marginRight: 15 }}
-                            className="pb-8"
+                            className="pb-4 bg-[#f2f2f2] border-[#f2f2f2] dark:bg-[#30354E] dark:border-[#30354E]"
                             cover={
-                              <img alt="" src={get(card, "image[0].medium")} />
+                              <img className="object-cover w-[260px] h-[146px]" alt="" src={get(card, "image[0].medium")}/>
                             }
                           >
                             <Meta
-                              className="pb-[40px]"
+                              className="pb-[40px] p-0"
                               title={
-                                <div className="flex justify-between items-center mb-3">
-                                  <p>{(get(card, "title", ""))}</p>
-                                  <p>{(get(card, "views", ""))}</p>
-                                  <p>{(get(card, "createdAt", ""))}</p>
+                                <div className="mb-1">
+                                  <p className="dark:text-[#e5e7eb] block truncate">{(get(card, "title", ""))}</p>
+                                  <div className="flex">
+                                    <p className="text-[#558dfe] mr-1">Views:</p>
+                                    <p className="dark:text-[#e5e7eb]">{(get(card, "views", ""))}</p>
+                                  </div>
+                                  <p className="dark:text-[#e5e7eb]">{(get(card, "createdAt", ""))}</p>
                                 </div>
                               }
                               description={
-                                <div className="flex justify-between items-center mb-3">
-                                  <p>{(get(card, "description", ""))}</p>
+                                <div className="flex justify-between items-center mb-2">
+                                  <p className="dark:text-[#e5e7eb] line-clamp-3">{(get(card, "description", ""))}</p>
                                 </div>
                               }
                             />

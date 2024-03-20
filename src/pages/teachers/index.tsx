@@ -102,7 +102,7 @@ const Teacher = () => {
                 />
                 <Row
                   justify="space-between"
-                  className="h-[75vh] overflow-y-auto mt-[15px]"
+                  className="h-[75vh] mt-[15px]"
                 >
                   {items.map((card) => {
                     return (
@@ -111,22 +111,22 @@ const Teacher = () => {
                           <Card
                             hoverable
                             style={{ width: 260, marginRight: 15 }}
-                            className="pb-8"
+                            className="pb-8 bg-[#f2f2f2] border-[#f2f2f2] dark:bg-[#30354E] dark:border-[#30354E]"
                             cover={
-                              <img alt="" src={get(card, "image[0].medium")} />
+                              <img className="object-cover w-[260px] h-[146px]" alt="" src={get(card, "image[0].medium")} />
                             }
                           >
                             <Meta
                               className="pb-[40px]"
                               title={
-                                <div className="flex justify-between items-center mb-3">
-                                  <p>{(get(card, "name", ""))}</p>
-                                  <p>{(get(card, "subject", ""))}</p>
+                                <div>
+                                  <p className="dark:text-[#e5e7eb]">{(get(card, "name", ""))}</p>
+                                  <p className="dark:text-[#e5e7eb] line-clamp-2">{(get(card, "subject", ""))}</p>
                                 </div>
                               }
                               description={
-                                <div className="flex justify-between items-center mb-3">
-                                  <p>{(get(card, "description", ""))}</p>
+                                <div className="mb-3">
+                                  <p className="line-clamp-3 dark:text-[#e5e7eb]">{(get(card, "description", ""))}</p>
                                 </div>
                               }
                             />

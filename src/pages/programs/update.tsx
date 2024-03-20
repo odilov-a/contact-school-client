@@ -9,7 +9,7 @@ const Program = ({ showEditModal, selectedCard }: any): JSX.Element => {
   return (
     <div className="">
       <Container.Form
-        className="w-[360px]"
+        className="w-[100%]"
         url={`/programs/${get(selectedCard, "_id")}`}
         method="put"
         fields={[
@@ -39,14 +39,14 @@ const Program = ({ showEditModal, selectedCard }: any): JSX.Element => {
             <Spin spinning={isSubmitting} tip="Verifying">
               <Field
                 component={Fields.Input}
-                className="mb-5"
+                className="mb-3 w-full"
                 name="title"
                 type="text"
                 placeholder="title"
                 size="large"
               />
               <Field
-                className="mb-5"
+                className="mb-3 w-full"
                 component={Fields.Input}
                 name="description"
                 type="text"
@@ -54,7 +54,7 @@ const Program = ({ showEditModal, selectedCard }: any): JSX.Element => {
                 size="large"
               />
               <Button
-                className="w-full h-auto py-[10px] px-4 bg-[#2196F3] text-white font-bold hover:!text-white"
+                className="w-full border-0 h-auto py-[10px] px-4 bg-[#2196F3] text-white font-bold hover:!text-white"
                 htmlType="submit"
               >
                 Saqlash
