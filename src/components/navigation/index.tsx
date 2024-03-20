@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { Menu } from "antd";
+import { FileImageOutlined, UserOutlined, BookOutlined, EditOutlined, SettingOutlined, UserAddOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import {
-  Vacancies,
   Translation,
-  Team,
-  Portfolio,
   LogOut,
   Light,
   Dark,
 } from "assets/images/icons";
 import useStore from "store";
-import Avatar from "assets/images/avatar.png";
+// import Avatar from "assets/images/avatar.png";
 import { useHooks } from "hooks";
 import { storage } from "services";
 
@@ -46,43 +44,43 @@ const Navigation: React.FC = () => {
     {
       key: "blogs",
       label: "bloglar",
-      icon: <Portfolio />,
+      icon: <EditOutlined />,
       route: "/blogs",
     },
     {
       key: "vacancies",
       label: "vakansiya",
-      icon: <Vacancies />,
+      icon: <UserAddOutlined />,
       route: "/vacancies",
     },
     {
       key: "galleries",
       label: "galereya",
-      icon: <Vacancies />,
+      icon: <FileImageOutlined />,
       route: "/galleries",
     },
     {
       key: "teachers",
       label: "teacher",
-      icon: <Vacancies />,
+      icon: <UserOutlined />,
       route: "/teachers",
     },
     {
       key: "programs",
       label: "programs",
-      icon: <Vacancies />,
+      icon: <BookOutlined />,
       route: "/programs",
     },
     {
       key: "telegram-courses",
       label: "telegram-courses",
-      icon: <Vacancies />,
+      icon: <SettingOutlined />,
       route: "/telegram-courses",
     },
     {
       key: "telegram-vacancies",
       label: "telegram-vacancies",
-      icon: <Vacancies />,
+      icon: <SettingOutlined />,
       route: "/telegram-vacancies",
     },
     {
@@ -138,7 +136,8 @@ const Navigation: React.FC = () => {
             <Menu.SubMenu
               key={menuItem.key + i}
               icon={menuItem.icon}
-              title={menuItem.label}
+              //@ts-ignore
+              title={t(menuItem.label)}
             >
               {menuItem.children.map((childItem) => (
                 <Menu.Item
@@ -173,14 +172,14 @@ const Navigation: React.FC = () => {
         <div className="absolute bottom-[36px] left-[20%]">
           <div className="flex justify-center mb-[60px]">
             <div className="profile-panel mt-[100px] transition-all ease-in-out duration-300">
-              <img
+              {/* <img
                 className="sider-avatar cursor-pointer w-[105px] relative z-1 h-[95px] rounded-[12px]"
                 src={Avatar}
                 alt="user-avatar"
                 onClick={() => {
                   navigate("/profile");
                 }}
-              />
+              /> */}
               <div className="username-input w-[175px] relative z-10 px-[6px] py-[4px] rounded-[16px] bg-[#E6ECFE] flex justify-between items-center">
                 <Link
                   to="/profile"
