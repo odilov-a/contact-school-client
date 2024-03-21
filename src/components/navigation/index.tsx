@@ -128,7 +128,7 @@ const Navigation: React.FC = () => {
       {/* <div> */}
       <div className="flex justify-center text-center text-[20px] font-[500] mt-[30px] mb-[60px] cursor-pointer dark:text-[#9EA3B5]">
         {/* <img src={Logo} alt="logo" /> */}
-        <Link to="/">{t("Hypernova admin")}</Link>
+        <Link to="/">{t("Contact School")}</Link>
       </div>
       {items.map((menuItem, i) => (
         <React.Fragment key={menuItem.key + i}>

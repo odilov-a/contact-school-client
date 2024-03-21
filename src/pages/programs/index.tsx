@@ -111,9 +111,6 @@ const Program = () => {
                             hoverable
                             style={{ width: 260, marginRight: 15 }}
                             className="pb-8 bg-[#f2f2f2] border-[#f2f2f2] dark:bg-[#30354E] dark:border-[#30354E]"
-                          // cover={
-                          //   <img alt="" src={get(card, "image[0].medium")} />
-                          // }
                           >
                             <Meta
                               className="pb-[40px]"
@@ -124,7 +121,7 @@ const Program = () => {
                               }
                               description={
                                 <div className="flex justify-between items-center mb-3">
-                                  <p className="dark:text-[#e5e7eb]">{(get(card, "description", ""))}</p>
+                                  <p className="dark:text-[#e5e7eb] line-clamp-3">{(get(card, "description", ""))}</p>
                                 </div>
                               }
                             />

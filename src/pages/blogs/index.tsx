@@ -113,7 +113,7 @@ const Blog = () => {
                             style={{ width: 260, marginRight: 15 }}
                             className="pb-4 bg-[#f2f2f2] border-[#f2f2f2] dark:bg-[#30354E] dark:border-[#30354E]"
                             cover={
-                              <img className="object-cover w-[260px] h-[146px]" alt="" src={get(card, "image[0].medium")}/>
+                              <img className="object-cover w-[260px] h-[146px]" alt="" src={get(card, "image[0].medium")} />
                             }
                           >
                             <Meta
@@ -122,10 +122,9 @@ const Blog = () => {
                                 <div className="mb-1">
                                   <p className="dark:text-[#e5e7eb] block truncate">{(get(card, "title", ""))}</p>
                                   <div className="flex">
-                                    <p className="text-[#558dfe] mr-1">Views:</p>
+                                    <p className="text-[#e5e7eb] mr-1">Views: </p>
                                     <p className="dark:text-[#e5e7eb]">{(get(card, "views", ""))}</p>
                                   </div>
-                                  <p className="dark:text-[#e5e7eb]">{(get(card, "createdAt", ""))}</p>
                                 </div>
                               }
                               description={

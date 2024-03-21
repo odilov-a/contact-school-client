@@ -1,5 +1,4 @@
 import { lazy } from "react";
-
 const Default = lazy(() => import("pages/default"));
 const Blogs = lazy(() => import("pages/blogs"));
 const Vacancies = lazy(() => import("pages/vacancies"));
@@ -11,9 +10,6 @@ const TelegramVacancies = lazy(() => import("pages/telegram-vacancies"));
 const Admin = lazy(() => import("pages/admin"));
 const Login = lazy(() => import("pages/login"));
 const NotFound = lazy(() => import("pages/notFound"));
-// const Courses = lazy(() => import("pages/courses"));
-// const Cruds = lazy(() => import("pages/crud"));
-// const AddCourse = lazy(() => import("pages/courses/NestedPages/AddCourse"));
 const LocalizationPanel = lazy(() => import("pages/localizationPanel"));
 
 export interface IRoute {
@@ -92,21 +88,6 @@ const privateRoutes: IRoute[] = [
     title: "",
     element: <NotFound />,
   },
-  // {
-  //   path: "/courses",
-  //   access: ["admin"],
-  //   element: <Courses />,
-  // },
-  // {
-  //   path: "/crud",
-  //   access: ["admin"],
-  //   element: <Cruds />,
-  // },
-  // {
-  //   path: "/courses/add",
-  //   element: <AddCourse />,
-  //   access: ["admin"],
-  // },
 ];
 
 const publicRoutes: IRoute[] = [

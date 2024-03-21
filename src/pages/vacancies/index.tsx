@@ -102,7 +102,7 @@ const Vacancy = () => {
                 <Row
                   justify="space-between"
                   align="stretch"
-                  className="h-[75vh] overflow-y-auto mt-[15px]"
+                  className="h-[75vh] mt-[15px]"
                 >
                   {items.map((card) => {
                     return (
@@ -112,9 +112,6 @@ const Vacancy = () => {
                             hoverable
                             style={{ width: 260, marginRight: 15 }}
                             className="pb-8 bg-[#f2f2f2] h-[100%] border-[#f2f2f2] dark:bg-[#30354E] dark:border-[#30354E]"
-                          // cover={
-                          //   <img alt="" src={get(card, "image[0].medium")} />
-                          // }
                           >
                             <Meta
                               className="pb-[40px]"
@@ -125,11 +122,11 @@ const Vacancy = () => {
                               }
                               description={
                                 <div>
-                                  <p className="dark:text-[#e5e7eb] text-base mb-1">{(get(card, "description", ""))}</p>
+                                  <p className="dark:text-[#e5e7eb] text-base line-clamp-3  mb-1">{(get(card, "description", ""))}</p>
                                   <p className="text-[#558dfe]">Ish Kunlari:</p>
-                                  <p className="dark:text-[#e5e7eb]">{(get(card, "week", ""))}</p>
+                                  <p className="dark:text-[#e5e7eb] line-clamp-3">{(get(card, "week", ""))}</p>
                                   <p className="text-[#558dfe]">Ish Vaqti:</p>
-                                  <p className="dark:text-[#e5e7eb]">{(get(card, "clock", ""))}</p>
+                                  <p className="dark:text-[#e5e7eb] line-clamp-3">{(get(card, "clock", ""))}</p>
                                 </div>
                               }
                             />
