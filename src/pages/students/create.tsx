@@ -4,13 +4,12 @@ import { Fields, Button } from "components";
 import { Container } from "modules";
 import { useHooks } from "hooks";
 
-const Blog = ({
+const Student = ({
   showCreateModal,
   setSuccess,
   successed,
 }: any): JSX.Element => {
   const { t } = useHooks();
-
   return (
     <div>
       <Container.Form
@@ -26,16 +25,16 @@ const Blog = ({
             required: true,
           },
           {
-            name: "subject",
-            type: "string",
-            required: true,
+            name: "score",
           },
           {
-            name: "achievements",
+            name: "ielts",
           },
           {
             name: "image",
-            required: true,
+          },
+          {
+            name: "image02",
           },
         ]}
         onSuccess={(data, resetForm, query) => {
@@ -54,17 +53,25 @@ const Blog = ({
               <Field
                 rootClassName="mb-[40px] w-[450px]"
                 component={Fields.Input}
-                name="title"
+                name="name"
                 type="text"
-                placeholder={t("Blog nomi")}
+                placeholder={t("name")}
                 size="large"
               />
               <Field
                 rootClassName="mb-[40px] w-[450px]"
                 component={Fields.Input}
-                name="description"
+                name="score"
                 type="text"
-                placeholder={t("Blog haqida")}
+                placeholder={t("score")}
+                size="large"
+              />
+              <Field
+                rootClassName="mb-[40px] w-[450px]"
+                component={Fields.Input}
+                name="ielts"
+                type="text"
+                placeholder={t("ielts")}
                 size="large"
               />
               <Field
@@ -72,6 +79,12 @@ const Blog = ({
                 setFieldValue={setFieldValue}
                 rootClassName="mb-[40px]"
                 name="image"
+              />
+              <Field
+                component={Fields.FileUpload}
+                setFieldValue={setFieldValue}
+                rootClassName="mb-[40px]"
+                name="image02"
               />
               <Button
                 title="Saqlash"
@@ -87,4 +100,4 @@ const Blog = ({
   );
 };
 
-export default Blog;
+export default Student;

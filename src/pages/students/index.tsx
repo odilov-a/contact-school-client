@@ -7,7 +7,7 @@ import Update from "./update";
 import Create from "./create";
 import { Delete, Edit, CreateDoc } from "assets/images/icons";
 
-const Blog = () => {
+const Student = () => {
   const { get, queryClient, t } = useHooks();
   const { Meta } = Card;
   const [editModal, showEditModal] = useState(false);
@@ -22,14 +22,13 @@ const Blog = () => {
     data: null,
   });
   const { mutate } = usePost();
-
   const onEdit = (item: object) => {
     showEditModal(true);
     setSelectedCard(item);
   };
   const onDeleteHandler = (id: string) => {
     Modal.confirm({
-      title: t("Вы действительно хотите удалить блог?"),
+      title: t("Вы действительно хотите удалить Student?"),
       okText: t("да"),
       okType: "danger",
       cancelText: t("нет"),
@@ -40,11 +39,11 @@ const Blog = () => {
   const deleteAction = (id: string) => {
     if (id) {
       mutate(
-        { method: "delete", url: `/blogs/${id}`, data: null },
+        { method: "delete", url: `/students/${id}`, data: null },
         {
           onSuccess: () => {
             queryClient.invalidateQueries({
-              queryKey: [`blogs`],
+              queryKey: [`students`],
             });
 
             notification["success"]({
@@ -71,7 +70,7 @@ const Blog = () => {
         onCancel={() => showCreateModal(false)}
         footer={null}
         centered
-        title="Create blog"
+        title="Create student"
         width={500}
         destroyOnClose
       >
@@ -83,19 +82,19 @@ const Blog = () => {
         onCancel={() => showEditModal(false)}
         footer={null}
         centered
-        title="Edit blog"
+        title="Edit student"
         width={500}
         destroyOnClose
       >
         <Update {...{ showEditModal, selectedCard }} />
       </Modal>
       <div>
-        <Container.All name="blogs" url="/blogs">
+        <Container.All name="students" url="/students">
           {({ items, isLoading }) => {
             return (
               <div>
                 <Button
-                  title="Create blog"
+                  title="Create student"
                   icon={<CreateDoc />}
                   // isLoading={successed}
                   size="large"
@@ -163,4 +162,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Student;

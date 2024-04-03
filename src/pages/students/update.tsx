@@ -4,14 +4,13 @@ import { Container } from "modules";
 import { Button, Spin } from "antd";
 import { useHooks } from "hooks";
 
-const Blog = ({ showEditModal, selectedCard }: any): JSX.Element => {
+const Student = ({ showEditModal, selectedCard }: any): JSX.Element => {
   const { get } = useHooks();
-
   return (
     <div className="">
       <Container.Form
         className="w-[360px]"
-        url={`/blogs/${get(selectedCard, "_id")}`}
+        url={`/students/${get(selectedCard, "_id")}`}
         method="put"
         configs={{
           headers: { 'Content-Type': 'multipart/form-data' },
@@ -33,9 +32,13 @@ const Blog = ({ showEditModal, selectedCard }: any): JSX.Element => {
             name: "image",
             type: "string",
           },
+          {
+            name: "image02",
+            type: "string",
+          },
         ]}
         onSuccess={(data, resetForm, query) => {
-          query.invalidateQueries({ queryKey: ["blogs"] });
+          query.invalidateQueries({ queryKey: ["students"] });
           showEditModal(false)
         }}
         onError={(error) => {
@@ -81,4 +84,4 @@ const Blog = ({ showEditModal, selectedCard }: any): JSX.Element => {
   );
 };
 
-export default Blog;
+export default Student;
